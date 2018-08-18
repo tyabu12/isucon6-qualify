@@ -18,14 +18,14 @@
       shell: PATH=/home/isucon/.local/ruby/bin:$PATH bundle install --deployment
       args:
         chdir: /home/isucon/webapp/ruby
-    - name: node
-      shell: PATH=/home/isucon/.local/node/bin:$PATH npm install
-      args:
-        chdir: /home/isucon/webapp/js
-    - name: node
-      shell: PATH=/home/isucon/.local/node/bin:$PATH npm install
-      args:
-        chdir: /home/isucon/webapp/js/node_modules/runkoa
+        #    - name: node
+        #      shell: PATH=/home/isucon/.local/node/bin:$PATH npm install
+        #      args:
+        #        chdir: /home/isucon/webapp/js
+        #    - name: node
+        #      shell: PATH=/home/isucon/.local/node/bin:$PATH npm install
+        #      args:
+        #        chdir: /home/isucon/webapp/js/node_modules/runkoa
     - name: python
       shell: /bin/bash /home/isucon/webapp/python/setup.sh
       args:
@@ -80,10 +80,10 @@
       copy: src=../files/isuda.ruby.service dest=/etc/systemd/system/isuda.ruby.service owner=root mode=644
     - name: ruby isutar (systemd)
       copy: src=../files/isutar.ruby.service dest=/etc/systemd/system/isutar.ruby.service owner=root mode=644
-    - name: js isuda (systemd)
-      copy: src=../files/isuda.js.service dest=/etc/systemd/system/isuda.js.service owner=root mode=644
-    - name: js isutar (systemd)
-      copy: src=../files/isutar.js.service dest=/etc/systemd/system/isutar.js.service owner=root mode=644
+      #    - name: js isuda (systemd)
+      #      copy: src=../files/isuda.js.service dest=/etc/systemd/system/isuda.js.service owner=root mode=644
+      #    - name: js isutar (systemd)
+      #      copy: src=../files/isutar.js.service dest=/etc/systemd/system/isutar.js.service owner=root mode=644
     - name: python isuda (systemd)
       copy: src=../files/isuda.python.service dest=/etc/systemd/system/isuda.python.service owner=root mode=644
     - name: python isutar (systemd)
